@@ -1,0 +1,41 @@
+.cont {
+    border-bottom: 3px solid rgb(88, 66, 64);
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: 0;
+    justify-content: space-between;
+  }
+  
+  a {
+    
+    padding-right: 15px;
+    padding-left: 20px;
+    font-size: 5vh;
+    color: rgb(241, 241, 241);
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center;
+    margin-bottom: -3px;
+    margin-top: -7px;
+     /* border-bottom: 3px solid rgb(88, 66, 64); */
+    /* transform: skew(-10deg); */
+  }
+  
+  a:hover {
+    background-color: rgb(105, 63, 60);
+    color: rgb(255, 255, 255);
+    border-right: 3px solid rgb(105, 63, 60);
+    border-left: 3px solid rgb(105, 63, 60);
+    font-weight: bold;
+  }
+
+  ngb-rating {
+    color: #ffffff;
+    position: relative;
+    left: -30%;
+    font-size: 15px;
+}
+    

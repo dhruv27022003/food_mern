@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Macondo&family=Permanent+Marker&family=Raleway:wght@200&family=Source+Sans+Pro:wght@200&display=swap');
+body{
+   
+   
+    font-family: Mocando;
+    background-color: rgb(41, 28, 28);
+    color: rgb(255, 255, 255);
+    /* padding-top: 2px; */
+   
+}
+
+a{  
+    text-decoration: none;
+}

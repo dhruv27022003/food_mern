@@ -1,0 +1,23 @@
+<ul>
+    <li *ngFor="let Bike of Bikes">
+      <a routerLink="/explore/{{Bike.id}}">
+        <img [src]="Bike.imageUrl" [alt]="Bike.name" />
+        <div class="content">
+          <div class="name">
+            {{Bike.name}}
+          </div>
+  
+          <div class="stars">
+            <!-- <star-rating [stars]="Bike.stars" /> -->
+          </div>
+          <div class="price" style="color: aliceblue;">
+            <span>
+              {{Bike.price | currency}}
+            </span>
+          </div>
+        </div>
+        <!-- <ngb-rating [max]="5" [rate]= {{Bike.stars}}></ngb-rating> -->
+      </a>
+    </li>
+  </ul>
+  
