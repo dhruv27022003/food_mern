@@ -1,1 +1,20 @@
-<p>bikepage works!</p>
+<div *ngIf="bike?.id" class="container">
+  <div class="details">
+    <div class="uo">
+      <h1 class="naam">{{ bike?.name }}</h1>
+
+      <h4 style="margin-top: 3vh">Rs.{{ bike?.price }} /day</h4>
+      <h5>{{ bike?.stars }}/5 ★</h5>
+      <h5>Milage: {{ bike?.mileage }} kmpl</h5>
+      <div class="tag">
+        <app-tags [bikepagetags]="bike?.tags" ></app-tags>
+      </div>
+    </div>
+    <div class="but">
+      <button  (click)="addToCart()">BOOK Now</button>
+    </div>
+  </div>
+  <div class="img_container">
+    <img [src]="bike?.imageUrl" [alt]="bike?.name" height="100%" />
+  </div>
+</div>

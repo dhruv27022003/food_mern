@@ -1,18 +1,18 @@
 import {Router} from 'express';
-import { sample_foods, sample_tags } from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/data.js';
+import { sample_Bikes, sample_tags } from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/data.js';
 import asyncHandler from 'express-async-handler';
-import  FoodModel from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/models/food.model.js';
+import  BikeModel from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/models/bike.model.js'
 const router = Router();
 
 router.get("/seed", asyncHandler(
  async (req, res) => {
-    const foodsCount = await FoodModel.countDocuments();
-    if(foodsCount> 0){
-      res.send("Seed is already done!");
-      return;
-    }
+    const BikesCount = await BikeModel.countDocuments();
+    // if(BikesCount> 0){
+    //   res.send("Seed is already done!");
+    //   return;
+    // }
     console.log("calling seed")
-    await FoodModel.create(sample_foods);
+    await BikeModel.create(sample_Bikes);
     res.send("Seed Is Done!");
 }
 ))
@@ -20,22 +20,22 @@ router.get("/seed", asyncHandler(
 
 router.get("/",asyncHandler(
   async (req, res) => {
-    const foods = await FoodModel.find();
-      res.send(foods);
+    const Bikes = await BikeModel.find();
+      res.send(Bikes);
   }
 ))
 
 router.get("/search/:searchTerm", asyncHandler(
   async (req, res) => {
     const searchRegex = new RegExp(req.params.searchTerm, 'i');
-    const foods = await FoodModel.find({name: {$regex:searchRegex}})
-    res.send(foods);
+    const Bikes = await BikeModel.find({name: {$regex:searchRegex}})
+    res.send(Bikes);
   }
 ))
 
 router.get("/tags", asyncHandler(
   async (req, res) => {
-    const tags = await FoodModel.aggregate([
+    const tags = await BikeModel.aggregate([
       {
         $unwind:'$tags'
       },
@@ -56,7 +56,7 @@ router.get("/tags", asyncHandler(
 
     const all = {
       name : 'All',
-      count: await FoodModel.countDocuments()
+      count: await BikeModel.countDocuments()
     }
 
     tags.unshift(all);
@@ -66,15 +66,15 @@ router.get("/tags", asyncHandler(
 
 router.get("/tag/:tagName",asyncHandler(
   async (req, res) => {
-    const foods = await FoodModel.find({tags: req.params.tagName})
-    res.send(foods);
+    const Bikes = await BikeModel.find({tags: req.params.tagName})
+    res.send(Bikes);
   }
 ))
 
-router.get("/:foodId", asyncHandler(
+router.get("/:BikeId", asyncHandler(
   async (req, res) => {
-    const food = await FoodModel.findById(req.params.foodId);
-    res.send(food);
+    const Bike = await BikeModel.findById(req.params.BikeId);
+    res.send(Bike);
   }
 ))
 

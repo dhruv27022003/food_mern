@@ -1,7 +1,7 @@
 import {Bike} from './app/shared/models/Bike';
 import { Tag } from './app/shared/models/Tag';
 
-export const sample_foods:Bike[] = [
+export const sample_Bikes:Bike[] = [
   {
     id:'1',
     name: 'Pizza Pepperoni',
@@ -10,8 +10,8 @@ export const sample_foods:Bike[] = [
     favorite: false,
     origins: ['italy'],
     stars: 4.5,
-    imageUrl: 'assets/food-1.jpg',
-    tags: ['FastFood', 'Pizza', 'Lunch'],
+    imageUrl: 'assets/Bike-1.jpg',
+    tags: ['FastBike', 'Pizza', 'Lunch'],
   },
   {
     id:'2',
@@ -21,8 +21,8 @@ export const sample_foods:Bike[] = [
     favorite: true,
     origins: ['persia', 'middle east', 'china'],
     stars: 4.7,
-    imageUrl: 'assets/food-2.jpg',
-    tags: ['SlowFood', 'Lunch'],
+    imageUrl: 'assets/Bike-2.jpg',
+    tags: ['SlowBike', 'Lunch'],
   },
   {
     id:'3',
@@ -32,8 +32,8 @@ export const sample_foods:Bike[] = [
     favorite: false,
     origins: ['germany', 'us'],
     stars: 3.5,
-    imageUrl: 'assets/food-3.jpg',
-    tags: ['FastFood', 'Hamburger'],
+    imageUrl: 'assets/Bike-3.jpg',
+    tags: ['FastBike', 'Hamburger'],
   },
   {
     id:'4',
@@ -43,8 +43,8 @@ export const sample_foods:Bike[] = [
     favorite: true,
     origins: ['belgium', 'france'],
     stars: 3.3,
-    imageUrl: 'assets/food-4.jpg',
-    tags: ['FastFood', 'Fry'],
+    imageUrl: 'assets/Bike-4.jpg',
+    tags: ['FastBike', 'Fry'],
   },
   {
     id:'5',
@@ -54,8 +54,8 @@ export const sample_foods:Bike[] = [
     favorite: false,
     origins: ['india', 'asia'],
     stars: 3.0,
-    imageUrl: 'assets/food-5.jpg',
-    tags: ['SlowFood', 'Soup'],
+    imageUrl: 'assets/Bike-5.jpg',
+    tags: ['SlowBike', 'Soup'],
   },
   {
     id:'6',
@@ -65,17 +65,17 @@ export const sample_foods:Bike[] = [
     favorite: false,
     origins: ['italy'],
     stars: 4.0,
-    imageUrl: 'assets/food-6.jpg',
-    tags: ['FastFood', 'Pizza', 'Lunch'],
+    imageUrl: 'assets/Bike-6.jpg',
+    tags: ['FastBike', 'Pizza', 'Lunch'],
   },
 ]
 
 export const sample_tags:Tag[] = [
   { name: 'All', count: 6 },
-  { name: 'FastFood', count: 4 },
+  { name: 'FastBike', count: 4 },
   { name: 'Pizza', count: 2 },
   { name: 'Lunch', count: 3 },
-  { name: 'SlowFood', count: 2 },
+  { name: 'SlowBike', count: 2 },
   { name: 'Hamburger', count: 1 },
   { name: 'Fry', count: 1 },
   { name: 'Soup', count: 1 },

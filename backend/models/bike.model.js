@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
 
-const FoodSchema = new Schema(
+const BikeSchema = new Schema(
   {  
     name: { type: String, required: true },
     price: { type: Number, required: true },
@@ -8,8 +8,9 @@ const FoodSchema = new Schema(
     favorite: { type: Boolean, default: false },
     stars: { type: Number, required: true },
     imageUrl: { type: String, required: true },
-    origins: { type: [String], required: true },
-    cookTime: { type: String, required: true },
+    origins: { type: [String], required: false},
+    cookTime: { type: String, required: false },
+    mileage: { type: Number, required: false },
   },
   {
     toJSON: {
@@ -22,6 +23,6 @@ const FoodSchema = new Schema(
   }
 );
 
-const FoodModel = model('food', FoodSchema);
+const BikeModel = model('Bike', BikeSchema);
 
-export default FoodModel; // Export as default
+export default BikeModel; // Export as default

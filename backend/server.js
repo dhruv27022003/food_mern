@@ -3,7 +3,7 @@ dotenv.config();
 import path from 'path';
 import express from "express";
 import cors from "cors";
-import foodRouter from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/routers/food.router.js';
+import BikeRouter from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/routers/bike.router.js';
 import userRouter from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/routers/user.router.js';
 import orderRouter from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/routers/order.router.js';
 import  { dbConnect } from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/configs/database.config.js';
@@ -16,7 +16,7 @@ app.use(cors({
     origin:["http://localhost:4200"]
 }));
 
-app.use("/api/foods", foodRouter);
+app.use("/api/Bikes", BikeRouter);
 app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
 
@@ -37,13 +37,13 @@ app.listen(port, () => {
 
 // const express = require('express');
 // const app = express();
-// const foodRouter = require('/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/routers/food.router.ts'); // Import the food router
+// const BikeRouter = require('/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/routers/Bike.router.ts'); // Import the Bike router
 
 // // Middleware to parse JSON
 // app.use(express.json());
 
-// // Mount the foodRouter at the '/api/foods' path
-// app.use('/api/foods', foodRouter);
+// // Mount the BikeRouter at the '/api/Bikes' path
+// app.use('/api/Bikes', BikeRouter);
 
 // // Other middleware and setup code...
 
