@@ -1,4 +1,10 @@
+<div class="top"></div>
 <app-tags></app-tags>
+<app-notfound
+  [visible]="!Bikes || !Bikes.length"
+  notFoundMessage="Sorry! No vehicle available"
+  resetLinkText="Explore "
+></app-notfound>
 <ul>
     <li *ngFor="let Bike of Bikes">
       <a routerLink="/explore/{{Bike.id}}">

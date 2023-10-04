@@ -30,7 +30,9 @@ asyncHandler(async (req, res) => {
 
 
 router.get('/newOrderForCurrentUser', asyncHandler(async (req, res) => {
+    
     const order= await getNewOrderForCurrentUser(req);
+    console.log("order received",order)
     if(order) res.send(order);
     else res.status(HTTP_BAD_REQUEST).send();
 }))

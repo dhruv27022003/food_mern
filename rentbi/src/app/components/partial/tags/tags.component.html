@@ -1,4 +1,5 @@
 <div *ngIf="tags">
+   <div class="container">
     <a *ngFor="let tag of tags" class="yo"
        routerLink="/tag/{{tag.name}}"
        >{{tag.name}} </a>
@@ -8,3 +9,4 @@
           routerLink="/tag/{{tagname}}"
           >{{tagname}}   </a>
       </div>
+    </div>

@@ -8,6 +8,7 @@ import { BikepageComponent } from './components/pages/bikepage/bikepage.componen
 import { HeaderComponent } from './components/partial/header/header.component';
 import { TagsComponent } from './components/partial/tags/tags.component';
 import { CartComponent } from './components/pages/cart/cart.component';
+import { NotfoundComponent } from './components/partial/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CartComponent } from './components/pages/cart/cart.component';
     BikepageComponent,
     HeaderComponent,
     TagsComponent,
-    CartComponent
+    CartComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,

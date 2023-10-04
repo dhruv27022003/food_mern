@@ -75,6 +75,19 @@ import axios from 'axios';
       { name: 'CRUIZER', count: 5 },
       { name: 'BULLET', count: 3 },
       { name: 'ELECTRIC', count: 1 },
+      { name: 'Varanasi', count: 4 },
+      { name: 'Delhi', count: 2 },
+      { name: 'Mumbai', count: 3 },
+      { name: 'Banglore', count: 2 },
+      { name: 'Jaipur', count: 1 },
+      { name: 'Gurugaon', count: 1 },
+      { name: 'Surat', count: 1 },
+      { name: 'CAR', count: 2 },
+      { name: 'SCOOTAR', count: 4 },
+      { name: 'SPORTS BIKE', count: 3 },
+      { name: 'CRUIZER', count: 5 },
+      { name: 'BULLET', count: 3 },
+      { name: 'ELECTRIC', count: 1 },
     ];
   }
  

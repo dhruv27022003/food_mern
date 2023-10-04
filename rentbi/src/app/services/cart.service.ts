@@ -3,13 +3,16 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Cart } from 'src/app/shared/models/Cart';
 import { Cartitem } from '../shared/models/CartItem';
 import { Bike } from '../shared/models/Bike';
+import { HttpClient } from '@angular/common/http';
+import { Order } from '../shared/models/Order';
+import { ORDER_NEW_FOR_CURRENT_USER_URL } from '../shared/constants/urls';
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
   private cart: Cart = this.getCartFromLocalStorage();
   private cartSubject: BehaviorSubject<Cart> = new BehaviorSubject(this.cart);
-  constructor() { }
+  constructor( ) { }
 
   addToCart(Bike: Bike): void {
     let cartItem = this.cart.items
@@ -61,4 +64,12 @@ export class CartService {
     const cartJson = localStorage.getItem('Cart');
     return cartJson ? JSON.parse(cartJson) : new Cart();
   }
+
+
+
+  // getNewOrderForCurrentUser():Observable<Order>{
+  //   console.log("running")
+  //   return this.http.get<Order>(ORDER_NEW_FOR_CURRENT_USER_URL);
+  
+  // }
 }

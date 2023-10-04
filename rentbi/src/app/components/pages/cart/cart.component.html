@@ -1,9 +1,9 @@
 <!-- <app-title title="RIDE" margin="1.5rem 0 0 2.5rem"></app-title> -->
-<!-- <app-not-found
+<app-notfound
   [visible]="!cart || !cart.items.length"
   notFoundMessage="No vehicle selected"
   resetLinkText="Explore "
-></app-not-found> -->
+></app-notfound>
 <div *ngIf="cart && cart.items.length" class="container">
   <div class="oooi "
   style="
@@ -22,16 +22,6 @@
       </a>
     </div>
     <div>
-      <!-- <h6>DAYS</h6>
-      <select #quantitySelect
-      [value]="cartItem.quantity"
-      (change)="changeQuantity(cartItem, quantitySelect.value)">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select> -->
     </div>
     <div>
         ₹ {{cartItem.price }}
@@ -46,13 +36,6 @@
 
 </ul>
 <br>
-
-<!-- <app-not-found
-  [visible]="true"
-  notFoundMessage=" "
-  resetLinkText="ADD MORE"
-></app-not-found> -->
-
 </div>
 <div class="checkout">
   <div>
@@ -60,6 +43,7 @@
     <div class="total-price">₹{{cart.totalPrice}}</div>
   </div>
 
-  <a routerLink="/checkout">Proceed to Checkout</a>
+  <a routerLink="/thanks" (click)="createOrder()" >Proceed to Checkout</a>
+  <!-- <button  (click)="createOrder()">BOOK Now</button> -->
 </div>
 </div>
