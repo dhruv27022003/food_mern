@@ -5,14 +5,18 @@ import { Cartitem } from '../shared/models/CartItem';
 import { Bike } from '../shared/models/Bike';
 import { HttpClient } from '@angular/common/http';
 import { Order } from '../shared/models/Order';
-import { ORDER_NEW_FOR_CURRENT_USER_URL } from '../shared/constants/urls';
+import { ORDER_CREATE_URL, ORDER_NEW_FOR_CURRENT_USER_URL } from '../shared/constants/urls';
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
+  static getNewOrderForCurrentUser1() {
+    throw new Error('Method not implemented.');
+  }
+
   private cart: Cart = this.getCartFromLocalStorage();
   private cartSubject: BehaviorSubject<Cart> = new BehaviorSubject(this.cart);
-  constructor( ) { }
+  constructor(private http: HttpClient) { }
 
   addToCart(Bike: Bike): void {
     let cartItem = this.cart.items
@@ -29,16 +33,6 @@ export class CartService {
       .filter(item => item.Bike.id != BikeId);
     this.setCartToLocalStorage();
   }
-
-  // changeQuantity(BikeId: string, quantity: number) {
-  //   let cartItem = this.cart.items
-  //     .find(item => item.Bike.id === BikeId);
-  //   if (!cartItem) return;
-
-  //   cartItem.quantity = quantity;
-  //   cartItem.price = quantity * cartItem.Bike.price;
-  //   this.setCartToLocalStorage();
-  // }
 
   clearCart() {
     this.cart = new Cart();
@@ -64,12 +58,10 @@ export class CartService {
     const cartJson = localStorage.getItem('Cart');
     return cartJson ? JSON.parse(cartJson) : new Cart();
   }
+ 
+  getNewOrderForCurrentUser(order:Order):Observable<any>{
+    console.log("sent", order)
+    return this.http.post(ORDER_CREATE_URL, order);
+  }
 
-
-
-  // getNewOrderForCurrentUser():Observable<Order>{
-  //   console.log("running")
-  //   return this.http.get<Order>(ORDER_NEW_FOR_CURRENT_USER_URL);
-  
-  // }
 }

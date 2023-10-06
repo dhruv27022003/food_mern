@@ -3,55 +3,50 @@ dotenv.config();
 import path from 'path';
 import express from "express";
 import cors from "cors";
+import bodyParser from 'body-parser';
 import BikeRouter from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/routers/bike.router.js';
 import userRouter from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/routers/user.router.js';
 import orderRouter from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/routers/order.router.js';
 import  { dbConnect } from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/configs/database.config.js';
 dbConnect();
+// const bodyParser = require('body-parser');
 
 const app = express();
 app.use(express.json());
+app.use(bodyParser.json()); 
 app.use(cors({
     credentials:true,
     origin:["http://localhost:4200"]
 }));
-
+app.post('/api/', (req, res) => {
+    console.log("received");
+    const receivedMessage = req.body
+    console.log('Received message from Angular:', receivedMessage);
+    res.json({ status: 'Message received by Express' });
+  });
 app.use("/api/Bikes", BikeRouter);
 app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
 
-app.use(express.static('public'));
+app.use(express.static('public'));  
+  
+app.post("/api/order/create", (req, res) => {
+    console.log("Received POST request to /api/order/create");
+    // Your order creation logic here
+  });
+  
+
 app.get('*', (req, res) => {
+    console.log("received")
     res.sendFile(path.join(__dirname,'public', 'index.html'))
 })
+
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
     console.log("Website served on http://localhost:" + port);
 })
 
-
-
-
-
-
-// const express = require('express');
-// const app = express();
-// const BikeRouter = require('/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/routers/Bike.router.ts'); // Import the Bike router
-
-// // Middleware to parse JSON
-// app.use(express.json());
-
-// // Mount the BikeRouter at the '/api/Bikes' path
-// app.use('/api/Bikes', BikeRouter);
-
-// // Other middleware and setup code...
-
-// // Start the server
-// const port = process.env.PORT || 3000;
-// app.listen(port, () => {
-//   console.log(`Server is running on port ${port}`);
-// });
 
 
 

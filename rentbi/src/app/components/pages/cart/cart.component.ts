@@ -26,17 +26,20 @@ export class CartComponent implements OnInit {
     this.cartService.removeFromCart(cartItem.Bike.id);
   }
 
-  createOrder(){
+  createOrder() {
     this.order.items = this.cart.items;
     this.order.totalPrice = this.cart.totalPrice;
-    console.log("order is ", this.order)
-    // this.cartService.getNewOrderForCurrentUser().subscribe({
-    //   next: (order) => {
-    //     this.order = order;
-    //   },
-    // })
-
+    console.log("order is ", this.order);
+    this.cartService.getNewOrderForCurrentUser(this.order).subscribe({
+      next: (order) => {
+        this.order = order;
+      },
+      error: (error) => {
+        console.error("Error creating order:", error);
+      },
+    });
   }
+  
 
 
 

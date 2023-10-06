@@ -2,19 +2,19 @@ import { Schema, model } from 'mongoose';
 
 const UserSchema = new Schema(
   {
-    name: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
-    password: { type: String, required: true },
-    address: { type: String, required: true },
-    isAdmin: { type: Boolean, required: true },
+    name: { type: String, required: false },
+    email: { type: String, required: false, unique:false},
+    password: { type: String, required: false},
+    address: { type: String, required: false },
+    isAdmin: { type: Boolean, required:false },
   },
   {
-    timestamps: true,
+    timestamps: false,
     toJSON: {
-      virtuals: true,
+      virtuals: false,
     },
     toObject: {
-      virtuals: true,
+      virtuals: false,
     },
   }
 );

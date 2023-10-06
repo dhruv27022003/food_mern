@@ -9,6 +9,8 @@ import { HeaderComponent } from './components/partial/header/header.component';
 import { TagsComponent } from './components/partial/tags/tags.component';
 import { CartComponent } from './components/pages/cart/cart.component';
 import { NotfoundComponent } from './components/partial/notfound/notfound.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ThanksComponent } from './components/partial/thanks/thanks.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { NotfoundComponent } from './components/partial/notfound/notfound.compon
     HeaderComponent,
     TagsComponent,
     CartComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    ThanksComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

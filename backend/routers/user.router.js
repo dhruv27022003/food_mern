@@ -10,10 +10,10 @@ const router = Router();
 router.get("/seed", asyncHandler(
   async (req, res) => {
      const usersCount = await UserModel.countDocuments();
-     if(usersCount> 0){
-       res.send("Seed is already done!");
-       return;
-     }
+    //  if(usersCount> 0){
+    //    res.send("Seed is already done!");
+    //    return;
+    //  }
  
      await UserModel.create(sample_users);
      res.send("Seed Is Done!");

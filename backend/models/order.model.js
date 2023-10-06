@@ -9,8 +9,8 @@ export interface LatLng{
 
 export const LatLngSchema = new Schema<LatLng>(
     {
-        lat: {type: String, required: true},
-        lng: {type: String, required: true},
+        lat: {type: String, required: false},
+        lng: {type: String, required: false},
     }
 );
 
@@ -22,9 +22,9 @@ export interface OrderItem{
 
 export const OrderItemSchema = new Schema<OrderItem>(
     {
-        Bike:{type: BikeSchema, required: true},
-        price:{ type: Number, required:true},
-        quantity: {type: Number, required: true}
+        Bike:{type: BikeSchema, required: false},
+        price:{ type: Number, required:false},
+        quantity: {type: Number, required: false}
     }
 );
 
@@ -43,21 +43,21 @@ export interface Order{
   }
 
   const orderSchema = new Schema<Order>({
-      name: {type: String, required: true},
-      address: {type: String, required: true},
-      addressLatLng: {type: LatLngSchema, required: true},
+      name: {type: String, required: false},
+      address: {type: String, required: false},
+      addressLatLng: {type: LatLngSchema, required: false},
       paymentId: {type: String},
-      totalPrice: {type: Number, required: true},
-      items: {type: [OrderItemSchema], required: true},
+      totalPrice: {type: Number, required: false},
+      items: {type: [OrderItemSchema], required: false},
       status: {type: String, default: OrderStatus.NEW},
-      user: {type: Schema.Types.ObjectId, required: true}
+      user: {type: Schema.Types.ObjectId, required: false}
   },{
-      timestamps: true,
+      timestamps: false,
       toJSON:{
-          virtuals: true
+          virtuals: false
       },
       toObject:{
-          virtuals: true
+          virtuals: false
       }
   });
 

@@ -6,11 +6,7 @@ const router = Router();
 
 router.get("/seed", asyncHandler(
  async (req, res) => {
-    const BikesCount = await BikeModel.countDocuments();
-    // if(BikesCount> 0){
-    //   res.send("Seed is already done!");
-    //   return;
-    // }
+
     console.log("calling seed")
     await BikeModel.create(sample_Bikes);
     res.send("Seed Is Done!");
