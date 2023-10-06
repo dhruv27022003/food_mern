@@ -18,12 +18,7 @@ app.use(cors({
     credentials:true,
     origin:["http://localhost:4200"]
 }));
-app.post('/api/', (req, res) => {
-    console.log("received");
-    const receivedMessage = req.body
-    console.log('Received message from Angular:', receivedMessage);
-    res.json({ status: 'Message received by Express' });
-  });
+
 app.use("/api/Bikes", BikeRouter);
 app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);

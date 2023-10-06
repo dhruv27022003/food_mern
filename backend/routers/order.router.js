@@ -2,9 +2,9 @@ import {Router} from 'express';
 import asyncHandler from 'express-async-handler';
 import { HTTP_BAD_REQUEST } from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/constants/http_status.js';
 import OrderStatus  from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/constants/order_status.js';
-import OrderModel  from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/models/user.model.js';
+// import OrderModel  from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/models/user.model.js';
 import auth from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/middlewares/auth.mid.js';
-
+import  OrderModel  from '../models/orders.model.js';
 const router = Router();
 router.use(auth);
 
@@ -19,6 +19,7 @@ asyncHandler(async (req, res) => {
 
     await OrderModel.create(requestOrder);
     const order = new OrderModel(requestOrder);
+    console.log("created order", order)
     try {
         // Save the order to MongoDB
         await order.save();
