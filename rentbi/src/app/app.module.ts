@@ -11,6 +11,7 @@ import { CartComponent } from './components/pages/cart/cart.component';
 import { NotfoundComponent } from './components/partial/notfound/notfound.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ThanksComponent } from './components/partial/thanks/thanks.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ThanksComponent } from './components/partial/thanks/thanks.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,65 @@
-<app-notfound
-  [visible]=true
-  notFoundMessage="Thanks for the request, we will contact you soon"
-  resetLinkText="Explore More"
-></app-notfound>
+<!-- <app-title title="RIDE" margin="1.5rem 0 0 2.5rem"></app-title> -->
+<div class="container align-items-center ">
+
+<div class="align-items-center w-75  " id="form" data-bs-theme="dark">
+
+  
+<div class="form-signinm-auto">
+<form>
+
+  <h1 class="h3 mb-3 fw-normal">Please Enter Your Details</h1>
+
+  <div class="form-floating">
+    <input class="form-control my-2" id="floatingInput" name="contactNumber" placeholder="name@example.com" [(ngModel)]="order.contactNumber">
+    <label for="floatingInput">Contact Number</label>
+  </div>
+  <div class="form-floating">
+    <input  class="form-control" id="floatingPassword" placeholder="Password" [(ngModel)]="order.address">
+    <label for="floatingPassword">Address</label>
+  </div>
+  <div class="form-floating py-4 ">
+    <div class="bikes-count"><h3>{{cart.totalCount}}</h3></div>
+    <div class="total-price"><h3>₹{{cart.totalPrice}}</h3></div>
+    <div>
+      <button class="btn  w-25 p-2 my-2" (click)="createOrder()"type="submit" routerLink="/">Submit</button>
+      <div *ngIf="cart && cart.items.length" class="container1">
+        <div class="oooi "
+        style="
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        "
+        >
+      <ul>
+        <li *ngFor="let cartItem of cart.items">
+          <div>
+            <img [src]="cartItem.Bike.imageUrl" [alt]="cartItem.Bike.name">
+          </div>
+          <div>
+            <a routerLink="/bike/{{cartItem.Bike.id}}" class ="name">
+              <h2>{{cartItem.Bike.name}}</h2>
+            </a>
+          </div>
+          <div>
+          </div>
+          <div>
+              ₹ {{cartItem.price }}
+          </div>
+      
+          <div>
+      
+          </div>
+        </li>
+      
+      </ul>
+      <br>
+      </div>
+      </div>
+      </div>
+  </div>
+
+
+</form>
+</div>
+</div>
+</div>

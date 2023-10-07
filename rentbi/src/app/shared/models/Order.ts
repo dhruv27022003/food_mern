@@ -8,4 +8,5 @@ export class Order{
   address!: string;
   createdAt!: string;
   status!: string;
+  contactNumber: string | undefined; 
 }
