@@ -23,8 +23,6 @@ export class ThanksComponent {
   createOrder() {
     this.order.items = this.cart.items;
     this.order.totalPrice = this.cart.totalPrice;
-    console.log("order is ", this.order);
-    alert("Request created successfully, we will contact you soon! ");
     this.cartService.getNewOrderForCurrentUser(this.order).subscribe({
       next: (order) => {
         this.order = order;

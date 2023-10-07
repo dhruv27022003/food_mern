@@ -13,15 +13,18 @@
     <input class="form-control my-2" id="floatingInput" name="contactNumber" placeholder="name@example.com" [(ngModel)]="order.contactNumber">
     <label for="floatingInput">Contact Number</label>
   </div>
+
   <div class="form-floating">
-    <input  class="form-control" id="floatingPassword" placeholder="Password" [(ngModel)]="order.address">
-    <label for="floatingPassword">Address</label>
+    <input class="form-control my-2" id="floatingInput" name="address" placeholder="name@example.com" [(ngModel)]="order.address">
+    <label for="floatingInput">Address</label>
   </div>
   <div class="form-floating py-4 ">
     <div class="bikes-count"><h3>{{cart.totalCount}}</h3></div>
     <div class="total-price"><h3>₹{{cart.totalPrice}}</h3></div>
     <div>
-      <button class="btn  w-25 p-2 my-2" (click)="createOrder()"type="submit" routerLink="/">Submit</button>
+      <button class="btn  w-25 p-2 my-2" (click)="createOrder()"type="submit"
+      routerLink="/orderPlaced"
+      >Submit</button>
       <div *ngIf="cart && cart.items.length" class="container1">
         <div class="oooi "
         style="

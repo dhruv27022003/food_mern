@@ -10,35 +10,6 @@ import axios from 'axios';
 @Injectable({
   providedIn: 'root'
 })
-// export class BikeService {
-  // getAll(): Bike[] {
-  //   throw new Error('Method not implemented.');
-  // }
-
-  // constructor(private http:HttpClient) { }
-
-  // getAll(): Observable<Bike[]> {
-  //   return this.http.get<Bike[]>(BikeS_URL);
-  // }
-
-  // getAllBikesBySearchTerm(searchTerm: string) {
-  //   return this.http.get<Bike[]>(BikeS_BY_SEARCH_URL + searchTerm);
-  // }
-
-  // getAllTags(): Observable<Tag[]> {
-  //   return this.http.get<Tag[]>(BikeS_TAGS_URL);
-  // }
-
-  // getAllBikesByTag(tag: string): Observable<Bike[]> {
-  //   return tag === "All" ?
-  //     this.getAll() :
-  //     this.http.get<Bike[]>(BikeS_BY_TAG_URL + tag);
-  // }
-
-  // getBikeById(BikeId:string):Observable<Bike>{
-  //   return this.http.get<Bike>(Bike_BY_ID_URL + BikeId);
-  // }
-
    
   export class BikeService {
   constructor (){}
@@ -48,7 +19,6 @@ import axios from 'axios';
 
     const {data} = await axios.get('/api/Bikes');
     const array = data
-    console.log(" calling data " , data);
     return array;
     
   };
@@ -64,8 +34,6 @@ import axios from 'axios';
       { name: 'ALL', count: 15 },
       { name: 'Varanasi', count: 4 },
       { name: 'Delhi', count: 2 },
-      { name: 'Mumbai', count: 3 },
-      { name: 'Banglore', count: 2 },
       { name: 'Jaipur', count: 1 },
       { name: 'Gurugaon', count: 1 },
       { name: 'Surat', count: 1 },
@@ -75,19 +43,7 @@ import axios from 'axios';
       { name: 'CRUIZER', count: 5 },
       { name: 'BULLET', count: 3 },
       { name: 'ELECTRIC', count: 1 },
-      { name: 'Varanasi', count: 4 },
-      { name: 'Delhi', count: 2 },
-      { name: 'Mumbai', count: 3 },
-      { name: 'Banglore', count: 2 },
-      { name: 'Jaipur', count: 1 },
-      { name: 'Gurugaon', count: 1 },
-      { name: 'Surat', count: 1 },
-      { name: 'CAR', count: 2 },
-      { name: 'SCOOTAR', count: 4 },
-      { name: 'SPORTS BIKE', count: 3 },
-      { name: 'CRUIZER', count: 5 },
-      { name: 'BULLET', count: 3 },
-      { name: 'ELECTRIC', count: 1 },
+      
     ];
   }
  
@@ -102,7 +58,6 @@ import axios from 'axios';
 export const getall =async () => {
 
   const {data} = await axios.get('/api/Bikes');
-  console.log(" calling data " , data);
   return data;
   
 };

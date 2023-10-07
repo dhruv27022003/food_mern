@@ -12,6 +12,7 @@ import { NotfoundComponent } from './components/partial/notfound/notfound.compon
 import { HttpClientModule } from '@angular/common/http';
 import { ThanksComponent } from './components/partial/thanks/thanks.component';
 import { FormsModule } from '@angular/forms';
+import { OrderPlacedComponent } from './components/partial/order-placed/order-placed.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     CartComponent,
     NotfoundComponent,
     ThanksComponent,
+    OrderPlacedComponent,
   ],
   imports: [
     BrowserModule,

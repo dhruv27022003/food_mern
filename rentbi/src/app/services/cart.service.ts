@@ -60,7 +60,7 @@ export class CartService {
   }
  
   getNewOrderForCurrentUser(order:Order):Observable<any>{
-    console.log("sent", order)
+    console.log("order request sent", order)
     return this.http.post(ORDER_CREATE_URL, order);
   }
 

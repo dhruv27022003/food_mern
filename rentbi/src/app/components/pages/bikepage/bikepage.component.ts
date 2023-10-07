@@ -24,7 +24,6 @@ export class BikepageComponent implements OnInit {
         const bike = await this.bikeservices.getAllbyid(params['id']);
         if (bike) {
           this.bike = bike; // Assign the value only if it's not undefined
-          console.log(" yoo man ", bike)
         } else {
           console.log(" yoo error")
           // Handle the case where bike is undefined, e.g., redirect or show an error

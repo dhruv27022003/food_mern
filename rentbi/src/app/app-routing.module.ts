@@ -4,6 +4,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { BikepageComponent } from './components/pages/bikepage/bikepage.component';
 import { CartComponent } from './components/pages/cart/cart.component';
 import { ThanksComponent } from './components/partial/thanks/thanks.component';
+import { OrderPlacedComponent } from './components/partial/order-placed/order-placed.component';
 
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: 'explore/:id', component: BikepageComponent},
   { path: 'tag/:tag', component: HomeComponent},
   { path: 'cart-page', component: CartComponent},
-  { path: 'thanks', component: ThanksComponent},
+  { path: 'placeOrder', component: ThanksComponent},
+  { path: 'orderPlaced', component: OrderPlacedComponent},
 ];
 
 @NgModule({

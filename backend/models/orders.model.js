@@ -23,6 +23,7 @@ const OrderItemSchema = new Schema({
 const orderSchema = new Schema({
   name: { type: String, required: false },
   address: { type: String, required: false },
+  contactNumber: { type: String, required: false },
   paymentId: { type: String },
   totalPrice: { type: Number, required: false },
   items: { type: [OrderItemSchema], required: false },

@@ -11,29 +11,19 @@ router.use(auth);
 router.post('/create',
 asyncHandler(async (req, res) => {
     const requestOrder = req.body;
-    console.log("order received",requestOrder)
+    // console.log("order received...",requestOrder)
     if (requestOrder.items.length <= 0) {
         res.status(HTTP_BAD_REQUEST).send('Cart Is Empty!');
         return;
     }
 
     await OrderModel.create(requestOrder);
-    const order = new OrderModel(requestOrder);
-    console.log("created order", order)
-    try {
-        // Save the order to MongoDB
-        await order.save();
-        res.status(201).send(order); // Respond with the saved order
-      } catch (error) {
-        console.error('Error saving order:', error);
-        res.status(HTTP_BAD_REQUEST).send('Failed to create the order');
-      }
     }));
 
 
 
 router.get('/newOrderForCurrentUser', asyncHandler(async (req, res) => {
-    console.log("order received")
+    // console.log("order received")
     const order= await getNewOrderForCurrentUser(req);
     console.log("order received",order)
     if(order) res.send(order);
