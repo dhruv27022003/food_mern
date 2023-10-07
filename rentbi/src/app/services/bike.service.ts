@@ -1,8 +1,4 @@
 import { Injectable } from '@angular/core';
-
-import { Observable } from 'rxjs';
-import { sample_Bikes, sample_tags } from 'src/data';
-import { BikeS_BY_SEARCH_URL, BikeS_BY_TAG_URL, BikeS_TAGS_URL, BikeS_URL, Bike_BY_ID_URL } from '../shared/constants/urls';
 import { Bike } from '../shared/models/Bike';
 import { Tag } from '../shared/models/Tag';
 import axios from 'axios';

@@ -5,7 +5,6 @@ import express from "express";
 import cors from "cors";
 import bodyParser from 'body-parser';
 import BikeRouter from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/routers/bike.router.js';
-import userRouter from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/routers/user.router.js';
 import orderRouter from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/routers/order.router.js';
 import  { dbConnect } from '/Users/rishabhdadheech/Desktop/Dhruv/webd/express/backend/configs/database.config.js';
 dbConnect();
@@ -20,7 +19,6 @@ app.use(cors({
 }));
 
 app.use("/api/Bikes", BikeRouter);
-app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
 
 app.use(express.static('public'));  

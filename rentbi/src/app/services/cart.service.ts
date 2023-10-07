@@ -5,7 +5,7 @@ import { Cartitem } from '../shared/models/CartItem';
 import { Bike } from '../shared/models/Bike';
 import { HttpClient } from '@angular/common/http';
 import { Order } from '../shared/models/Order';
-import { ORDER_CREATE_URL, ORDER_NEW_FOR_CURRENT_USER_URL } from '../shared/constants/urls';
+import { ORDER_CREATE_URL} from '../shared/constants/urls';
 @Injectable({
   providedIn: 'root'
 })
